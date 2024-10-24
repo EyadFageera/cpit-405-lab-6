@@ -63,6 +63,7 @@ submit.addEventListener("click", () => {
 
 clear.addEventListener("click", () => {
     commentbox.value = "";
+    document.cookie = "voted=true; path=/; expires=" + new Date().toUTCString();
 });
 
 
@@ -80,7 +81,7 @@ function setCookie() {
     document.cookie = "likes=" + likes + "; path=/; expires=" + expireOn.toUTCString();
     document.cookie = "dislikes=" + dislikes + "; path=/; expires=" + expireOn.toUTCString();
     document.cookie = "comments=" + JSON.stringify(comments) + "; path=/; expires=" + expireOn.toUTCString();
-    document.cookie = "voted=true; path=/; expires=" + expireOn.toUTCString(); // Set voted cookie
+    document.cookie = "voted=true; path=/; expires=" + expireOn.toUTCString();
 }
 
 function getCookie(name) {
